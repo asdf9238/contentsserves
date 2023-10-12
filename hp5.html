@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <title>SCUZM</title>
+<script>
+	function User(name, num){
+		this.name = name; //이름 표시
+		this.num = num; //유저 숫자 표시
+
+		this.add = function(){
+			if(name++)
+				return num++;
+		}
+	}
+</script>
+
 <style>
 
 	.main_image
@@ -79,21 +91,16 @@
 	</form></div>
 	<hr>
 
-	<nav>
-		<ul id = "list">
-		<li><a style="text-decoration: none;" href="hp1.html">유즈맵 파일</a> |
-			<a style="text-decoration: none;" href="hp3.html">유즈맵 공략 및 후기</a> |
-			<a style="text-decoration: none;" href="hp5.html">미니게임</a></li>
-		</ul>
-	</nav>
-</body>
+	<script>
+		let now = new Date();
+		document.write("현재 시간: "+now.toLocaleString()+"<br><hr>");
 
-<table>
-	<tbody>
-		<caption>신작 게임들 소개</caption>
-		<tr>
-			<td><iframe width="560" height="315" src="https://www.youtube.com/embed/7vYE1QqXuq0?si=LF1h35UjRGP_6H4N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br><br></td>
-		</tr>
-	</tbody>
-</table>
+		let user = new User("own");
+		document.write("name : ");
+		document.write(user.name + "<br>");
+		user.add();
+		document.write(user.add());
+
+	</script>
+</body>
 </html>
